@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+   <EmailIdOrPhone>
+      <Xpath>.//*[@id='username']</Xpath>
+      <Id>username</Id>
+      <Css></Css>
+   </EmailIdOrPhone>
+   
+   <Password>
+      <Xpath>.//*[@id='password']</Xpath>
+      <Id>password</Id>
+      <Css></Css>
+   </Password>
+   
+   <LoginButton>
+      <Xpath>.//*[@id='btn-login']</Xpath>
+      <Id>password</Id>
+      <Css></Css>
+   </LoginButton>
+   
+  
+</class>
