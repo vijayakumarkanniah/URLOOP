@@ -13,11 +13,23 @@
       <Css></Css>
    </Password>
    
-   <LoginButton>
-      <Xpath>.//*[@id='btn-login']</Xpath>
-      <Id>password</Id>
+   <Submit>
+      <Xpath>.//*[@value='Submit']</Xpath>
+      <Id>btn-login</Id>
       <Css></Css>
-   </LoginButton>
+   </Submit>
+   
+     <ForgotPassword>
+      <Xpath>.//*[text()='Forgot Password?']</Xpath>
+      <Id>username</Id>
+      <Css></Css>
+   </ForgotPassword>
+   
+     <ForgotPasswordEmailID>
+      <Xpath>.//*[@id='username']</Xpath>
+      <Id>username</Id>
+      <Css></Css>
+   </ForgotPasswordEmailID>
    
   
 </class>

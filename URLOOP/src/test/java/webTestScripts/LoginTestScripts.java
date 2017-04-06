@@ -6,6 +6,8 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import objectRepositoryReader.ObjectRepositoryStaticReader;
 import readingPropertiesFile.ReadConfigProperties;
@@ -14,6 +16,7 @@ public class LoginTestScripts {
 	
 
 	static WebDriver driver;
+	static WebDriverWait wait;
 	Properties propertiesConfig;
 	
 	static String loginXmlURL;
@@ -29,6 +32,8 @@ public class LoginTestScripts {
 		
 		System.setProperty("webdriver.chrome.driver",propertiesConfig.getProperty("ChromeDriverURL"));
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
 		driver.get(propertiesConfig.getProperty("URL"));
 		
 		loginXmlURL =	propertiesConfig.getProperty("LoginXmlURL");
@@ -37,18 +42,41 @@ public class LoginTestScripts {
 		
 	}
 	
-	public void login_Submit(String userName,String password){
+	public void login_Submit(String userName,String password) throws InterruptedException{
 		
-	driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"EmailIdOrPhone","Xpath")))
+		Thread.sleep(10000);
+		
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"EmailIdOrPhone","Xpath")))
 	.sendKeys(userName);
-	
-	driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Password","Xpath")))
-	.sendKeys(password);
-	
-	driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"LoginButton","Xpath")))
-	.click();
-	
 		
+	Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Password","Xpath")))
+	.sendKeys(password);
+		
+	Thread.sleep(2000);
+	
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Submit","Xpath")))
+	.click();
 	}
+	
+	public void forgotPassword(String eMailID) throws InterruptedException{
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"ForgotPassword","Xpath")))
+		.click();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"ForgotPasswordEmailID","Xpath")))
+		.sendKeys(eMailID);
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Submit","Xpath")))
+		.click();
+		}
+
 
 }
