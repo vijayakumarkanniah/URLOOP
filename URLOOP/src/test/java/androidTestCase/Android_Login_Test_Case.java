@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
-public class Login_page {
+public class Android_Login_Test_Case {
 	
     public static AndroidDriver<WebElement> dr;
 	
