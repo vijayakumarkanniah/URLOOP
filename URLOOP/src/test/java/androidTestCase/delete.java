@@ -19,6 +19,8 @@ public class delete {
 
 
 	WebDriver driver;
+	
+	WebDriver driverdddd;
 
 	@BeforeClass
 	public void setUp() throws MalformedURLException{
