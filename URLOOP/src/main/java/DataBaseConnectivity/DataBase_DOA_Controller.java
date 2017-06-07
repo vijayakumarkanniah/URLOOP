@@ -16,7 +16,11 @@ public class DataBase_DOA_Controller  {
 		ArrayList<String> Delete = DataBase_DOA(DataBaseName,ColumnNumber,DBQuery);
 	
 	System.out.println("Main Got Value"+Delete.get(2));
+	
 	}*/
+	
+	
+	/*Getting the Value From the Data Base*/
 	
 	public static ArrayList<String> DataBase_DOA(String DataBaseName,int ColumnNumber,String DBQuery){
 	DataBaseImpDAO d=new DataBaseConnection();
