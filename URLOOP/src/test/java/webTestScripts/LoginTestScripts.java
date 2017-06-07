@@ -32,7 +32,7 @@ public class LoginTestScripts {
 		
 		System.setProperty("webdriver.chrome.driver",propertiesConfig.getProperty("ChromeDriverURL"));
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		/*driver.manage().window().maximize();*/
 		
 		driver.get(propertiesConfig.getProperty("URL"));
 		
