@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+   <Username>
+      <Xpath>.//*[@id='username']</Xpath>
+      <Id>com.tringapps.urloop.resident:id/email_or_phone</Id>
+      <Css></Css>
+   </Username>
+   
+   <Password>
+      <Xpath>.//*[@id='password']</Xpath>
+      <Id>com.tringapps.urloop.resident:id/password_edit_text</Id>
+      <Css></Css>
+   </Password>
+   
+   <SignIn>
+      <Xpath>.//*[@value='Submit']</Xpath>
+      <Id>com.tringapps.urloop.resident:id/login_button</Id>
+      <Text>Sign In</Text>
+      <Css></Css>
+   </SignIn>
+   
+     
+     <Errormessage>
+      <Xpath>.//*[text()='Forgot Password?']</Xpath>
+      <Id>android:id/message</Id>
+      <Css></Css>
+   </Errormessage>
+   
+   
+   
+     <ForgotPassword>
+      <Xpath>.//*[text()='Forgot Password?']</Xpath>
+      <Id>com.tringapps.urloop.resident:id/forgot_password</Id>
+      <Css></Css>
+   </ForgotPassword>
+   
+<!--     <ForgotPasswordEmailID>
+      <Xpath>.//*[@id='username']</Xpath>
+      <Id>username</Id>
+      <Css></Css>
+   </ForgotPasswordEmailID> -->
+   
+  
+</class>
