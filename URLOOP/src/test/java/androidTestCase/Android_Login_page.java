@@ -65,6 +65,11 @@ public static void Invalidlogin() throws InterruptedException, IOException
 	
 }
 
+public static void onlyusername() throws InterruptedException, IOException
+{
+	
+}
+
 
 
 
