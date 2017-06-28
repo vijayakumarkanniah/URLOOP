@@ -54,6 +54,8 @@ public class ExcelRead {
 		 /*Getting the row count of the excel*/
 		 int rowCount = getExcelSheet.getLastRowNum()-getExcelSheet.getFirstRowNum();
 		 /*Iterating the TestCase ( Row ) of the excel*/
+		 System.out.println("RowCount"+rowCount);
+		 
 		 for (int i = 0; i < rowCount; i++) {
 			 /*Iterating the KeyData ( Column ) of the excel*/
 			 for (int j = 0; j <= getExcelSheet.getRow(0).getLastCellNum();j++){
@@ -67,9 +69,16 @@ public class ExcelRead {
 				 else if (getExcelSheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_STRING)
 				 {
 					 if (TestCase.equalsIgnoreCase(getExcelSheet.getRow(i).getCell(0).getStringCellValue()) && KeyWord.equalsIgnoreCase(getExcelSheet.getRow(0).getCell(j).getStringCellValue()) ){
-						 System.out.println("Validation Success"+getExcelSheet.getRow(i).getCell(j).toString());
-						 
+						 /*System.out.println("Validation Success"+getExcelSheet.getRow(i).getCell(j).toString());*/
+						 if(/*getExcelSheet.getRow(i).getCell(j).getCellType() == Cell.CELL_TYPE_BLANK ||*/
+						    getExcelSheet.getRow(i).getCell(j) == null){
+							 
+							 System.out.println("Inside Blank");
+							 ReturnValueOfTheExcel="";
+						 }
+						 else{
 						 ReturnValueOfTheExcel = getExcelSheet.getRow(i).getCell(j).toString();
+						 }
 						 }
 					 /*RunTime Exception is Thrown Out*/
 				 } else{
@@ -82,6 +91,8 @@ public class ExcelRead {
 				 
 				 }
 			 }
+		 
+		 System.out.println("String :"+ReturnValueOfTheExcel);
 		 return ReturnValueOfTheExcel;
 		 }
 	 }
