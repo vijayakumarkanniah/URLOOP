@@ -3,11 +3,14 @@ package androidTestScripts;
 import java.io.IOException;
 import java.util.Properties;
 
+import javax.swing.text.View;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import androidTestCase.Connectionintialization;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import objectRepositoryReader.ObjectRepositoryStaticReader;
 import readingPropertiesFile.ReadConfigProperties;
 
@@ -34,13 +37,24 @@ public class Android_LoginTestScripts {
 		
 	}
 	
-public void Invalidlogin(String userName,String password) throws InterruptedException{
+
+	
+
+	
+	
+	public void Invalidlogin(String userName,String password) throws InterruptedException{
 	
 	conn.dr.findElement(By.id(ObjectRepositoryStaticReader.oBjectXmlReader(AndroidloginXmlURL,"Username","Id")))
 	.sendKeys(userName);
+	
 	conn.dr.findElement(By.id(ObjectRepositoryStaticReader.oBjectXmlReader(AndroidloginXmlURL,"Password","Id")))
 	.sendKeys(password);
-	conn.dr.hideKeyboard();
+    	
+	
+	System.out.println("Hide KeyBoard");
+	
+	conn.dr.pressKeyCode(66);
+	Thread.sleep(2000);
 	conn.dr.findElement(By.name(ObjectRepositoryStaticReader.oBjectXmlReader(AndroidloginXmlURL,"SignIn","Text")))
 	.click();
 	Thread.sleep(2000);
@@ -69,6 +83,8 @@ public void Invalidlogin(String userName,String password) throws InterruptedExce
 		System.out.println("Alert message not displayed");
 		
 	}
+	
+	
 		
 	}
 	

@@ -59,9 +59,9 @@ public class LoginTestScripts {
 		
 	Thread.sleep(2000);
 	
-	/*LocalWebDriver.driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Submit","Xpath")))
-	.click();*/
-	LocalWebDriver.driver.findElement(By.xpath("dcrcrcrcrc")).click();
+	LocalWebDriver.driver.findElement(By.xpath(ObjectRepositoryStaticReader.oBjectXmlReader(loginXmlURL,"Submit","Xpath")))
+	.click();
+	/*LocalWebDriver.driver.findElement(By.xpath("dcrcrcrcrc")).click();*/
 	
 	}
 	
